@@ -12,11 +12,13 @@ Reconstruct:
 
 # General:      dbhost       		dbname   dbuser      dbpass        calibration
 #Use-CaLib:      a2calib.online.a2.kph   calib    calib       basel10       Compton_2012_12
-Use-CaLib:      localhost   2012_12    calib    123456       Compton_2012_12
+#Use-CaLib:      localhost   2012_12    calib    123456       Compton_2012_12
+Use-CaLib:	blaster	CaLib_2012_12	calib	basel10	2012_12_Compton_Collicott
 #
 #
 # miscellaneous calibrations    # target position  (0=off/1=on)
-Use-CaLib-Misc:                 1
+
+#Use-CaLib-Misc:                 1
 # tagger calib:     time  (0=off/1=on)
 Use-CaLib-TAGG:     1
 # CB calib:         energy  time    timewalk    quadr. energy  (0=off/1=on)
@@ -30,7 +32,7 @@ Use-CaLib-Veto:     1       1
 
 
 #Use-CaLib-CBEnergyPerRun: 	data/CBEnergyCorrectionPerRun.txt
-RootTree-Output-Folder:         ~/
+#RootTree-Output-Folder:         ~/
 RootTree-File-Name:		Acqu
 
 # Read in and decode beam helicity ADC

@@ -7,14 +7,14 @@ JobName=$2
 localOutputDir="/local/raid1/work/${USER}/analysis/${JobName}"
 
 #data will be scp'd from here to $LocalDataDir if it's not already found on the farm RAID
-DataDir="a2cb@a2kallisti.online.a2.kph:/exports/RAID_a2kallisti/2013_11-G-E" 
+DataDir="collicot@a2datastore1.online.a2.kph:/work0/2012/2012_12_Compton/runs/amor" 
 
 #Location for Acqu data files on the farm RAID array. This is writeable by all kpha2 users.
 #Everyone should Keep using the location under /local/raid0/work/a2data for now.
-LocalDataDir="/local/raid0/work/a2data/2013_11-G-E" 
+LocalDataDir="/local/raid0/A2/2012/xz-2012_12-Compton-Sigma3" 
 
 #Who'll get the emails from the farm
-MailAddress="martel@kph.uni-mainz.de"
+MailAddress="collicot@kph.uni-mainz.de"
 
 #No of Acqu data files in each job
 RunsPerJob="1"
@@ -133,7 +133,7 @@ if($1=="ServerSetup:")$0=ss; if($1=="BatchDir:")$0=bd; if($1=="Directory:")$0=dl
 
     #now make the job file
     echo "#!/bin/sh" > $jobfile;
-    echo "#PBS -N AcquFarm_${USER}" >> $jobfile;
+    echo "#PBS -N AR_${USER}" >> $jobfile;
     echo "#PBS -m abe" >> $jobfile;
     echo "#PBS -M $MailAddress"  >> $jobfile;
     echo "#PBS -V"  >> $jobfile;
