@@ -1,0 +1,59 @@
+##-----------------------------------------------------------------------
+##--Author	JRM Annand   13th Jan 2004
+##--Update	JRM Annand... 1st Dec 2004
+##############################################################################
+# Server setup file
+# ############################################################################
+#
+# Number of Input streams (sources of data), Record length to write data
+# and switch 0/1 = no/yes to control data write
+#
+#              Number streams	Record Len	Save Data
+Input-Streams:	1		32768		0
+#
+##############################################################################
+# Optional directory spec. 
+# If not specified File-Names must contain the full directory path
+File-Directory:	scratch/
+#
+##############################################################################
+# Now the list of data files to analyse normal mode
+#		File Name	1st rec	Last rec
+Stream-Spec:	File	Mk1	0	32768	32	0	400
+#
+##############################################################################
+# Specify files
+File-Name: Compton_242.dat 0 0
+File-Name: Compton_243.dat 0 0
+File-Name: Compton_305.dat 0 0
+File-Name: Compton_659.dat 0 0
+File-Name: Compton_660.dat 0 0
+File-Name: Compton_661.dat 0 0
+File-Name: Compton_306.dat 0 0
+File-Name: Compton_354.dat 0 0
+File-Name: Compton_355.dat 0 0
+File-Name: Compton_427.dat 0 0
+File-Name: Compton_428.dat 0 0
+File-Name: Compton_429.dat 0 0
+File-Name: Compton_430.dat 0 0
+File-Name: Compton_449.dat 0 0
+File-Name: Compton_483.dat 0 0
+File-Name: Compton_484.dat 0 0
+File-Name: Compton_485.dat 0 0
+File-Name: Compton_547.dat 0 0
+File-Name: Compton_548.dat 0 0
+File-Name: Compton_549.dat 0 0
+File-Name: Compton_603.dat 0 0
+File-Name: Compton_604.dat 0 0
+File-Name: Compton_605.dat 0 0
+File-Name: Compton_720.dat 0 0
+File-Name: Compton_721.dat 0 0
+File-Name: Compton_722.dat 0 0
+File-Name: Compton_769.dat 0 0
+File-Name: Compton_770.dat 0 0
+File-Name: Compton_771.dat 0 0
+File-Name: Compton_772.dat 0 0
+File-Name: Compton_783.dat 0 0
+File-Name: Compton_786.dat 0 0
+#
+## END
