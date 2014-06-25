@@ -19,17 +19,52 @@ Reconstruct:
 ## scaler_ref can be overridden by specific run settings in the "runs: lines"
 #		norm_energy	edgeMin	edgeMax		tagger	ladder	scaler_ref	buffers		edge	plane	deadband(MeV)
 #defaults to:  	700.00		full_tagger_range	TAGG    FPD  	data/scaler.dmp 5		fit	epics   0.5
-Misc:	app	450.00		80.0	700.0		TAGG    FPD 	data/ScalerDump.txt  20	fit	file    0.2	
+Misc:	app	450.00		80.0	700.0		TAGG    FPD 	data/ScalerDump.txt  10	fit	file    0.2	
 #	
-#
 #
 #Specify run ranges for para perp amo, and corresponding scaler reference files.
 #Should list all the run ranges here
 #Will use plane info if "plane" is set to "epics" in "Misc: app" above
 #Misc: runs     runMin  runMax          scaler_ref                plane(para|perp|amo)  edge_setting edge_range(+-meV)
-Misc:   runs	100	2000		data/ScalerDump.txt	  para			310.0        20.0
 #
+Misc:   runs	242	243		data/ScalerDump.txt	  amo			0.0        0.0
+Misc:   runs	244	304		data/ScalerDump.txt	  para			310.0      20.0
 #
+Misc:   runs	305	306		data/ScalerDump.txt	  amo			0.0        0.0
+Misc:   runs	307	353		data/ScalerDump.txt	  para			310.0      20.0
+#
+Misc:   runs	354	355		data/ScalerDump.txt	  amo			0.0        0.0
+Misc:   runs	356	426		data/ScalerDump.txt	  para			310.0      20.0
+#
+Misc:   runs	427	430		data/ScalerDump.txt	  amo			0.0        0.0
+Misc:   runs	431	448		data/ScalerDump.txt	  para			310.0      20.0
+#
+Misc:   runs	449	449		data/ScalerDump.txt	  amo			0.0        0.0
+Misc:   runs	450	482		data/ScalerDump.txt	  para			310.0      20.0
+#
+Misc:   runs	483	485		data/ScalerDump.txt	  amo			0.0        0.0
+Misc:   runs	486	546		data/ScalerDump.txt	  para			310.0      20.0
+#
+Misc:   runs	547	549		data/ScalerDump.txt	  amo			0.0        0.0
+Misc:   runs	550	602		data/ScalerDump.txt	  para			310.0      20.0
+#
+Misc:   runs	603	605		data/ScalerDump.txt	  amo			0.0        0.0
+Misc:   runs	606	658		data/ScalerDump.txt	  para			310.0      20.0
+#
+Misc:   runs	659	661		data/ScalerDump.txt	  amo			0.0        0.0
+Misc:   runs	662	719		data/ScalerDump.txt	  para			310.0      20.0
+#
+Misc:   runs	720	722		data/ScalerDump.txt	  amo			0.0        0.0
+Misc:   runs	723	768		data/ScalerDump.txt	  para			310.0      20.0
+#
+Misc:   runs	769	772		data/ScalerDump.txt	  amo			0.0        0.0
+Misc:   runs	773	782		data/ScalerDump.txt	  para			310.0      20.0
+#
+Misc:   runs	783	783		data/ScalerDump.txt	  amo			0.0        0.0
+Misc:   runs	784	785		data/ScalerDump.txt	  para			310.0      20.0
+#
+Misc:   runs	786	786		data/ScalerDump.txt	  amo			0.0        0.0
+Misc:   runs	787	1000		data/ScalerDump.txt	  para			310.0      20.0
 #
 # The "pvnames" and "rads" are required if "edge" or "plane" are set to epics in the  "Misc:	app"
 ### Names of the epics channels for the variables required
@@ -48,8 +83,8 @@ Misc:   rads    4               2
 # A different set of parameters should be defined for para and perp 
 ### parameter sets for polarization of beam
 #                  run range     type   plane  params:    
-Misc:   poltable  100     3000  params	para   0.008564 0.000217 1.127625 0.021950 883.150000 2.000000 2.474378 0.679500 0.000000 0.000000 31.326603 
-Misc:   poltable  100     3000  params 	perp   0.008222 0.000332 1.098172 0.020647 883.150000 2.000000 2.507221 0.647229 0.000000 0.000000 31.318016 
+Misc:   poltable  100     3000  params	para   0.008155 0.000181 1.121955 0.020007 883.150000 2.000000 2.437990 0.591560 0.000000 0.000000 31.507924  
+Misc:   poltable  100     3000  params 	perp   0.008222 0.000332 1.098172 0.020647 883.150000 2.000000 2.507221 0.647229 0.000000 0.000000 31.318016
 #
 #
 # Do some post-initialisation.
