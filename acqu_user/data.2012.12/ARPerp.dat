@@ -23,11 +23,11 @@ Directory: ./
 Analysis: TA2UserAnalysis
 ##
 ## Analysis setup file
-AnalysisSetup: AR-Analysis.dat
+AnalysisSetup: data/ARPerp-Analysis.dat
 ##
 ## Fragmented scaler blocks
 ## 2 blocks, 192 scalers from CB, 492 scalers from Tagger
 SplitScaler: 2 256 364
 ##
 ## Set up of data files
-ServerSetup: AR-Server.dat
+ServerSetup: data/ARPerp-Server.dat

@@ -1,0 +1,238 @@
+##-----------------------------------------------------------------------
+##--Author	JRM Annand   13th Jan 2004
+##--Update	JRM Annand... 1st Dec 2004
+##############################################################################
+# Server setup file
+# ############################################################################
+#
+# Number of Input streams (sources of data), Record length to write data
+# and switch 0/1 = no/yes to control data write
+#
+#              Number streams	Record Len	Save Data
+Input-Streams:	1		32768		0
+#
+##############################################################################
+# Optional directory spec. 
+# If not specified File-Names must contain the full directory path
+File-Directory:	scratch/
+#
+##############################################################################
+# Now the list of data files to analyse normal mode
+#		File Name	1st rec	Last rec
+Stream-Spec:	File	Mk1	0	32768	32	0	400
+#
+##############################################################################
+# Specify files
+File-Name: Compton_247.dat 0 0
+File-Name: Compton_249.dat 0 0
+File-Name: Compton_250.dat 0 0
+File-Name: Compton_256.dat 0 0
+File-Name: Compton_257.dat 0 0
+File-Name: Compton_258.dat 0 0
+File-Name: Compton_259.dat 0 0
+File-Name: Compton_260.dat 0 0
+File-Name: Compton_265.dat 0 0
+File-Name: Compton_267.dat 0 0
+File-Name: Compton_269.dat 0 0
+File-Name: Compton_270.dat 0 0
+File-Name: Compton_271.dat 0 0
+File-Name: Compton_272.dat 0 0
+File-Name: Compton_273.dat 0 0
+File-Name: Compton_274.dat 0 0
+File-Name: Compton_276.dat 0 0
+File-Name: Compton_277.dat 0 0
+File-Name: Compton_278.dat 0 0
+File-Name: Compton_279.dat 0 0
+File-Name: Compton_284.dat 0 0
+File-Name: Compton_285.dat 0 0
+File-Name: Compton_286.dat 0 0
+File-Name: Compton_287.dat 0 0
+File-Name: Compton_292.dat 0 0
+File-Name: Compton_293.dat 0 0
+File-Name: Compton_294.dat 0 0
+File-Name: Compton_295.dat 0 0
+File-Name: Compton_301.dat 0 0
+File-Name: Compton_302.dat 0 0
+File-Name: Compton_303.dat 0 0
+File-Name: Compton_304.dat 0 0
+File-Name: Compton_315.dat 0 0
+File-Name: Compton_316.dat 0 0
+File-Name: Compton_317.dat 0 0
+File-Name: Compton_318.dat 0 0
+File-Name: Compton_319.dat 0 0
+File-Name: Compton_320.dat 0 0
+File-Name: Compton_321.dat 0 0
+File-Name: Compton_323.dat 0 0
+File-Name: Compton_324.dat 0 0
+File-Name: Compton_325.dat 0 0
+File-Name: Compton_326.dat 0 0
+File-Name: Compton_327.dat 0 0
+File-Name: Compton_328.dat 0 0
+File-Name: Compton_329.dat 0 0
+File-Name: Compton_330.dat 0 0
+File-Name: Compton_331.dat 0 0
+File-Name: Compton_332.dat 0 0
+File-Name: Compton_333.dat 0 0
+File-Name: Compton_334.dat 0 0
+File-Name: Compton_335.dat 0 0
+File-Name: Compton_336.dat 0 0
+File-Name: Compton_337.dat 0 0
+File-Name: Compton_338.dat 0 0
+File-Name: Compton_339.dat 0 0
+File-Name: Compton_340.dat 0 0
+File-Name: Compton_341.dat 0 0
+File-Name: Compton_342.dat 0 0
+File-Name: Compton_343.dat 0 0
+File-Name: Compton_344.dat 0 0
+File-Name: Compton_346.dat 0 0
+File-Name: Compton_347.dat 0 0
+File-Name: Compton_348.dat 0 0
+File-Name: Compton_349.dat 0 0
+File-Name: Compton_350.dat 0 0
+File-Name: Compton_351.dat 0 0
+File-Name: Compton_352.dat 0 0
+File-Name: Compton_353.dat 0 0
+File-Name: Compton_362.dat 0 0
+File-Name: Compton_363.dat 0 0
+File-Name: Compton_364.dat 0 0
+File-Name: Compton_365.dat 0 0
+File-Name: Compton_370.dat 0 0
+File-Name: Compton_371.dat 0 0
+File-Name: Compton_372.dat 0 0
+File-Name: Compton_373.dat 0 0
+File-Name: Compton_374.dat 0 0
+File-Name: Compton_375.dat 0 0
+File-Name: Compton_376.dat 0 0
+File-Name: Compton_377.dat 0 0
+File-Name: Compton_378.dat 0 0
+File-Name: Compton_379.dat 0 0
+File-Name: Compton_380.dat 0 0
+File-Name: Compton_381.dat 0 0
+File-Name: Compton_382.dat 0 0
+File-Name: Compton_383.dat 0 0
+File-Name: Compton_384.dat 0 0
+File-Name: Compton_385.dat 0 0
+File-Name: Compton_386.dat 0 0
+File-Name: Compton_387.dat 0 0
+File-Name: Compton_388.dat 0 0
+File-Name: Compton_389.dat 0 0
+File-Name: Compton_394.dat 0 0
+File-Name: Compton_395.dat 0 0
+File-Name: Compton_396.dat 0 0
+File-Name: Compton_397.dat 0 0
+File-Name: Compton_402.dat 0 0
+File-Name: Compton_411.dat 0 0
+File-Name: Compton_412.dat 0 0
+File-Name: Compton_413.dat 0 0
+File-Name: Compton_440.dat 0 0
+File-Name: Compton_441.dat 0 0
+File-Name: Compton_442.dat 0 0
+File-Name: Compton_443.dat 0 0
+File-Name: Compton_444.dat 0 0
+File-Name: Compton_451.dat 0 0
+File-Name: Compton_452.dat 0 0
+File-Name: Compton_453.dat 0 0
+File-Name: Compton_454.dat 0 0
+File-Name: Compton_459.dat 0 0
+File-Name: Compton_460.dat 0 0
+File-Name: Compton_461.dat 0 0
+File-Name: Compton_462.dat 0 0
+File-Name: Compton_467.dat 0 0
+File-Name: Compton_468.dat 0 0
+File-Name: Compton_469.dat 0 0
+File-Name: Compton_470.dat 0 0
+File-Name: Compton_475.dat 0 0
+File-Name: Compton_476.dat 0 0
+File-Name: Compton_477.dat 0 0
+File-Name: Compton_478.dat 0 0
+File-Name: Compton_492.dat 0 0
+File-Name: Compton_494.dat 0 0
+File-Name: Compton_495.dat 0 0
+File-Name: Compton_496.dat 0 0
+File-Name: Compton_497.dat 0 0
+File-Name: Compton_498.dat 0 0
+File-Name: Compton_499.dat 0 0
+File-Name: Compton_500.dat 0 0
+File-Name: Compton_501.dat 0 0
+File-Name: Compton_502.dat 0 0
+File-Name: Compton_503.dat 0 0
+File-Name: Compton_504.dat 0 0
+File-Name: Compton_505.dat 0 0
+File-Name: Compton_506.dat 0 0
+File-Name: Compton_507.dat 0 0
+File-Name: Compton_508.dat 0 0
+File-Name: Compton_509.dat 0 0
+File-Name: Compton_510.dat 0 0
+File-Name: Compton_511.dat 0 0
+File-Name: Compton_512.dat 0 0
+File-Name: Compton_554.dat 0 0
+File-Name: Compton_555.dat 0 0
+File-Name: Compton_556.dat 0 0
+File-Name: Compton_557.dat 0 0
+File-Name: Compton_558.dat 0 0
+File-Name: Compton_568.dat 0 0
+File-Name: Compton_569.dat 0 0
+File-Name: Compton_570.dat 0 0
+File-Name: Compton_571.dat 0 0
+File-Name: Compton_576.dat 0 0
+File-Name: Compton_577.dat 0 0
+File-Name: Compton_578.dat 0 0
+File-Name: Compton_579.dat 0 0
+File-Name: Compton_584.dat 0 0
+File-Name: Compton_585.dat 0 0
+File-Name: Compton_586.dat 0 0
+File-Name: Compton_587.dat 0 0
+File-Name: Compton_592.dat 0 0
+File-Name: Compton_593.dat 0 0
+File-Name: Compton_594.dat 0 0
+File-Name: Compton_595.dat 0 0
+File-Name: Compton_600.dat 0 0
+File-Name: Compton_601.dat 0 0
+File-Name: Compton_619.dat 0 0
+File-Name: Compton_620.dat 0 0
+File-Name: Compton_621.dat 0 0
+File-Name: Compton_622.dat 0 0
+File-Name: Compton_627.dat 0 0
+File-Name: Compton_628.dat 0 0
+File-Name: Compton_629.dat 0 0
+File-Name: Compton_630.dat 0 0
+File-Name: Compton_675.dat 0 0
+File-Name: Compton_676.dat 0 0
+File-Name: Compton_677.dat 0 0
+File-Name: Compton_679.dat 0 0
+File-Name: Compton_680.dat 0 0
+File-Name: Compton_681.dat 0 0
+File-Name: Compton_682.dat 0 0
+File-Name: Compton_683.dat 0 0
+File-Name: Compton_684.dat 0 0
+File-Name: Compton_685.dat 0 0
+File-Name: Compton_686.dat 0 0
+File-Name: Compton_687.dat 0 0
+File-Name: Compton_688.dat 0 0
+File-Name: Compton_697.dat 0 0
+File-Name: Compton_698.dat 0 0
+File-Name: Compton_699.dat 0 0
+File-Name: Compton_703.dat 0 0
+File-Name: Compton_708.dat 0 0
+File-Name: Compton_709.dat 0 0
+File-Name: Compton_710.dat 0 0
+File-Name: Compton_711.dat 0 0
+File-Name: Compton_716.dat 0 0
+File-Name: Compton_717.dat 0 0
+File-Name: Compton_718.dat 0 0
+File-Name: Compton_719.dat 0 0
+File-Name: Compton_735.dat 0 0
+File-Name: Compton_742.dat 0 0
+File-Name: Compton_743.dat 0 0
+File-Name: Compton_751.dat 0 0
+File-Name: Compton_758.dat 0 0
+File-Name: Compton_768.dat 0 0
+File-Name: Compton_781.dat 0 0
+File-Name: Compton_784.dat 0 0
+File-Name: Compton_787.dat 0 0
+File-Name: Compton_789.dat 0 0
+File-Name: Compton_794.dat 0 0
+File-Name: Compton_797.dat 0 0
+File-Name: Compton_801.dat 0 0
+#
+## END

@@ -7,11 +7,11 @@ JobName=$2
 localOutputDir="/local/raid1/work/${USER}/analysis/${JobName}"
 
 #data will be scp'd from here to $LocalDataDir if it's not already found on the farm RAID
-DataDir="collicot@a2datastore1.online.a2.kph:/work0/2012/2012_12_Compton/runs/amor" 
+DataDir="collicot@a2datastore1.online.a2.kph:/work0/2012/2012_12_Compton/runs" 
 
 #Location for Acqu data files on the farm RAID array. This is writeable by all kpha2 users.
 #Everyone should Keep using the location under /local/raid0/work/a2data for now.
-LocalDataDir="/local/raid0/A2/2012/xz-2012_12-Compton-Sigma3" 
+LocalDataDir="/local/raid0/A2/rundata/2012-12_Compton_Sigma3/" 
 
 #Who'll get the emails from the farm
 MailAddress="collicot@kph.uni-mainz.de"

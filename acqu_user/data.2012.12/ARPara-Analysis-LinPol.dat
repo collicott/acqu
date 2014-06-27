@@ -30,17 +30,14 @@ Misc:	app	450.00		80.0	700.0		TAGG    FPD 	data/scalerDumps/Compton_243.scalDump
 Misc:   runs	242	243		data/scalerDumps/Compton_243.scalDump	  amo			0.0        0.0
 Misc:   runs	244	304		data/scalerDumps/Compton_243.scalDump	  para			310.0      20.0
 #
-Misc:   runs	305	306		data/scalerDumps/Compton_306.scalDump  	amo			0.0        0.0
+Misc:   runs	305	306		data/scalerDumps/Compton_306.scalDump  	  amo			0.0        0.0
 Misc:   runs	307	353		data/scalerDumps/Compton_306.scalDump	  para			310.0      20.0
 #
 Misc:   runs	354	355		data/scalerDumps/Compton_355.scalDump	  amo			0.0        0.0
 Misc:   runs	356	426		data/scalerDumps/Compton_355.scalDump	  para			310.0      20.0
 #
-Misc:   runs	427	430		data/scalerDumps/Compton_430.scalDump	  amo			0.0        0.0
-Misc:   runs	431	448		data/scalerDumps/Compton_430.scalDump	  para			310.0      20.0
-#
-Misc:   runs	449	449		data/scalerDumps/Compton_449.scalDump	  amo			0.0        0.0
-Misc:   runs	450	482		data/scalerDumps/Compton_449.scalDump	  para			310.0      20.0
+Misc:   runs	427	430		data/scalerDumps/Compton_429.scalDump	  amo			0.0        0.0
+Misc:   runs	431	482		data/scalerDumps/Compton_429.scalDump	  para			310.0      20.0
 #
 Misc:   runs	483	485		data/scalerDumps/Compton_485.scalDump	  amo			0.0        0.0
 Misc:   runs	486	546		data/scalerDumps/Compton_485.scalDump	  para			310.0      20.0

@@ -1,0 +1,127 @@
+##-----------------------------------------------------------------------
+##--Author	JRM Annand   29th Apr 2003
+##--Update	JRM Annand...13th Jul 2007
+##--Update	C. Collicott. 8th Dec 2012 -- Added extra Multihit lines for TAPS
+##--Description
+##                *** Acqu++ <-> Root ***
+## Analysis of Sub-Atomic Physics Experimental Data 
+##
+## Parameter File: AR-Analysis.dat (specified in AR.dat)
+## Setup basic parameters of analysis to be used
+## This one sets up an analysis of CB-TAPS-Tagger data
+##
+##-----------------------------------------------------------------------
+##
+## The following give sample specifications for
+## handlers for flash or multihit ADCs or TDCs
+##
+## Catch-TDC, where a reference TDC channel has to be specified
+## The reference TDC channel contains the trigger time which is subtracted
+## from the other specified channels
+## CB TDC's
+##              #hits   start   stop    reference
+MultiADC:       3       1401    1911    1400
+MultiADC:       3       2001    2767    2000
+## MWPC TDCS
+MultiADC:       3       4000    4639    2000
+## TAPS inner ring
+MultiADC:       3       30201   30350   30200
+## TAPS PbWO4
+MultiADC:	3	30419	30419	30200
+MultiADC:	3	30200	30200	30200
+MultiADC:	3	30600	30600	30200
+MultiADC:	3	29953	29965	30200
+##
+## SG ADC read out in 3-sum mode (#hits is always 3)
+## DC # channels summed for the pedestal (before signal leading edge)
+## signal # channels summed for the signal region of the pulse
+## tail # channels summed for the tail region (after signal trailing edge)
+## CB S-ADC's
+#               #hits   start   stop    DC      signal  tail
+MultiADC:       3       3000    3735    30      30      30
+## MWPC strip S-ADC's
+MultiADC:       3       5000    5351    30      30      30
+#
+## Stuff to monitor time dependence of counting rates and the hit pattern
+## coming from the trigger box....the parameter is the setup file name
+RateMonitor: AR-Analysis-TriggerRate.dat
+BitPattern:  AR-Analysis-TriggerPat.dat
+##
+## Apparatus setup....
+## Raw analysis may be performed without Apparati
+##              Name            Class           	Setup file
+Apparatus:      TAGG            TA2Tagger   		AR-Analysis-Tagger.dat
+Apparatus:      CB              TA2CentralApparatus	AR-Analysis-CentApp.dat
+Apparatus:      TAPS            TA2Taps		  	AR-Analysis-TAPS.dat
+Apparatus:     	LinPol          TA2LinearPolEpics       ARAmor-Analysis-LinPol.dat
+##
+## Turn on apparatus-level reconstruction
+Reconstruct-Analysis:
+##
+## Specify physics analysis
+##			Name	Class		Config File
+Physics-Analysis:	PHYS	TA2GoAT		AR-Analysis-GoAT.dat
+#Physics-Analysis:   MyCaLib     TA2MyCaLib      MyCaLib.dat
+##
+## Do some post initialisation...usually necessary
+Initialise:
+##
+## Setup of extra procedures to run at periodic intervals
+## The procedures are usually held in macro script files
+## Period...every N events
+##	N	Macro File			Macro Procedure
+Period:	10000	root/macros/PeriodMacro.C	PeriodMacro()
+#Period: 1000	linPolMacro.C	linPolMacro()
+##
+## Finish...when all input data files processed
+Finish: root/macros/FinishWorker.C	Finish();
+##
+## Histogram ALL defined single value ADC's
+#
+Display: ADC 1281
+Display: ADC 20401
+##
+# we added the following line Baya & Julia
+Display: ADC 20201 20202
+##
+## Display blocks of scalers
+Display: Scaler 0 181
+Display: SumScaler 0 181
+Display: Scaler 182 191
+Display: SumScaler 182 191
+Display: Scaler 192 203
+Display: SumScaler 192 203
+Display: Scaler 204 555
+Display: SumScaler 204 555
+##
+## Time dependence of individual scaler rates and ratios
+Display: Rate	0	500
+Display: Rate	1	500
+Display: Rate	2	500
+Display: Rate	3	500
+Display: Rate	4	500
+Display: Rate	5	500
+Display: Rate	6	500
+Display: Rate	7	500
+Display: Rate	8	500
+Display: Rate	9	500
+Display: Rate	10	500
+Display: Rate	11	500
+Display: Rate	12	500
+Display: Rate	13	500
+Display: Rate	14	500
+Display: Rate	15	500
+Display: Rate	16	500
+Display: Rate	17	500
+##
+## Trigger pattern, and e-beam polarisation bits
+Display: Pattern	0 32 0 32
+Display: Pattern	1 64 0 64
+Display: Pattern	2 16 0 16
+Display: Pattern-N	1 32 0 32
+##
+## CB-TAPS synchronisation monitors
+Display: 2D 20401 100 1800 2000 2005M0 100 -900 -800
+Display: 2D 2000 200 0 10000  1400   200 0 10000
+##
+## END OF FILE
