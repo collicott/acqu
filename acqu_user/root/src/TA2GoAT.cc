@@ -202,7 +202,8 @@ void    TA2GoAT::PostInit()
    	else  fullName = gAR->GetFileName();
 		
 	while(fullName.Contains("/")) fullName.Remove(0,1+fullName.Index("/"));
-	fullName.ReplaceAll(".dat",".root");
+	fullName.Remove(fullName.Index(".dat"),strlen(fullName));
+	fullName.Append(".root");
 	if(strlen(inputName) && fullName.BeginsWith(inputName)) fullName.Remove(0,strlen(inputName));
 	else fullName.Prepend("_");
 	fullName.Prepend(fileName);
