@@ -37,6 +37,7 @@
 #include "TA2MyRateEstimation.h"
 #include "TA2TAPSAnalysis.h"
 #include "TA2GeomCalibPhysics.h"
+#include "TA2OnlinePhys.h"
 
 // Recognised apparatus classes.
 // The "standard" set is held in TA2Analysis
@@ -62,7 +63,8 @@ enum {
   EA2MyCaLib, 
   EA2MyRateEstimation,
   EA2GeomCalibPhysics,
-  EA2TAPSAnalysis };
+  EA2TAPSAnalysis,
+  EA2OnlinePhys };
 
 static const Map_t kKnownChild[] =
 {
@@ -91,6 +93,7 @@ static const Map_t kKnownChild[] =
   {"TA2MyCaLib",          EA2MyCaLib},
   {"TA2MyRateEstimation", EA2MyRateEstimation},
   {"TA2TAPSAnalysis",     EA2TAPSAnalysis},
+  {"TA2OnlinePhys",     EA2OnlinePhys},
   {NULL,                  -1}
 };
 
@@ -186,6 +189,9 @@ TA2DataManager* TA2UserAnalysis::CreateChild(const char* name, Int_t a)
   case EA2TAPSAnalysis:
     // TAPS analysis
     return new TA2TAPSAnalysis( name, this );
+  case EA2OnlinePhys:
+    // OnlinePhys analysis
+    return new TA2OnlinePhys( name, this );
 
    default:
     PrintError((char*)name, "<Unknown apparatus..cannot continue>", EErrFatal);

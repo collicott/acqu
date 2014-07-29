@@ -1,0 +1,30 @@
+############################################################
+# Setup File for Online Physics class #
+#
+# Author: Cristina Collicott
+############################################################
+#
+# Set Target parameters (used by TA2Physics.cc)
+Target:	0. 0. 0.	938.271  
+#
+#############################################################
+Initialise:
+############################################################
+# Define histograms to display
+#
+Display: 1D NPhoton		10 	0 	10 
+Display: 1D PhotonEnergy	85 	0 	850
+Display: 1D PhotonTheta		180 	0 	180
+Display: 1D PhotonPhi		190 	-190 	190
+Display: 1D PhotonTime		100 	-50 	50
+#
+#
+Display: 1D NProton		10 	0 	10 
+Display: 1D ProtonEnergy	85 	0 	850
+Display: 1D ProtonTheta		180 	0 	180
+Display: 1D ProtonPhi		190 	-190 	190
+Display: 1D ProtonTime		100 	-50 	50
+#
+#
+Display: 1D TaggerTime		1200	-600	600
+

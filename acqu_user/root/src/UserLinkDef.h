@@ -72,6 +72,6 @@
 #pragma link C++ class TA2MwpcIntersection++;
 #pragma link C++ class TA2GeomCalibPhysics+;
 #pragma link C++ class TA2CylMwpcLayer+;
-
+#pragma link C++ class TA2OnlinePhys+;
 
 #endif
