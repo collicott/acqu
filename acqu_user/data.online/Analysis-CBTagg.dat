@@ -43,6 +43,7 @@ Apparatus:      BeamPolMon      TA2BeamPolMon           Apparatus-BeamPolMon.dat
 ## Specify physics analysis
 ##			Name	Class			Config File
 #Physics-Analysis:	EtaM	TA2PhotoPhysics	CBTaggPhysics.dat
+Physics-Analysis:	PHYS	TA2OnlinePhys	Physics-Online.dat
 ##
 ### Do some post initialisation...usually necessary
 Initialise:
