@@ -346,8 +346,9 @@ void    TA2GoAT::Reconstruct()
 	if(fCB)
 	{
 	// Collect CB Hits
-    	nParticles	= fCB->GetNParticle();      
-		for(int i=0; i<nParticles; i++)
+    	Int_t nCBParticles = fCB->GetNParticle();
+	nParticles = 0;
+		for(int i=0; i<nCBParticles; i++)
 		{
 			TA2Particle part = fCB->GetParticles(i);
 			
@@ -355,42 +356,45 @@ void    TA2GoAT::Reconstruct()
 			part.SetMass(0.0);
 
 			// Reset a bunch of inconsistant "no-value" markers
-			if(TMath::Abs(part.GetT()) >= TA2GoAT_NULL) Ek[i] = 0.0;
-			else Ek[i] = part.GetT();
+			if(TMath::Abs(part.GetT()) >= TA2GoAT_NULL) Ek[nParticles] = 0.0;
+			else Ek[nParticles] = part.GetT();
 
-			if(TMath::Abs(part.GetTime()) >= TA2GoAT_NULL) time[i] = 0.0;
-			else time[i] = part.GetTime();
-			
-			if(TMath::Abs(part.GetVetoEnergy()) >= TA2GoAT_NULL) d_E[i] = 0.0;
-			else d_E[i]	= part.GetVetoEnergy();
-			
-			if(TMath::Abs(part.GetEnergyMwpc0()) >= TA2GoAT_NULL) WC0_E[i] = 0.0;
-			else WC0_E[i] = part.GetEnergyMwpc0();
-			
-			if(TMath::Abs(part.GetEnergyMwpc1()) >= TA2GoAT_NULL) WC1_E[i] = 0.0;
-			else WC1_E[i] = part.GetEnergyMwpc1();
-			
-			if(TMath::Abs(part.GetPsVertex().X()) >= TA2GoAT_NULL) WC_Vertex_X[i] = 0.0;
-			else WC_Vertex_X[i]  = part.GetPsVertex().X();			
+			if(Ek[nParticles] == 0) continue; // reject these damn particles
 
-			if(TMath::Abs(part.GetPsVertex().Y()) >= TA2GoAT_NULL) WC_Vertex_Y[i] = 0.0;
-			else WC_Vertex_Y[i]  = part.GetPsVertex().Y();	
+			if(TMath::Abs(part.GetTime()) >= TA2GoAT_NULL) time[nParticles] = 0.0;
+			else time[nParticles] = part.GetTime();
 			
-			if(TMath::Abs(part.GetPsVertex().Z()) >= TA2GoAT_NULL) WC_Vertex_Z[i] = 0.0;
-			else WC_Vertex_Z[i]  = part.GetPsVertex().Z();				
+			if(TMath::Abs(part.GetVetoEnergy()) >= TA2GoAT_NULL) d_E[nParticles] = 0.0;
+			else d_E[nParticles]	= part.GetVetoEnergy();
 			
-			if(part.GetCentralIndex() == ENullHit) centralCrys[i] = -1;
-			else centralCrys[i] = part.GetCentralIndex();
+			if(TMath::Abs(part.GetEnergyMwpc0()) >= TA2GoAT_NULL) WC0_E[nParticles] = 0.0;
+			else WC0_E[nParticles] = part.GetEnergyMwpc0();
+			
+			if(TMath::Abs(part.GetEnergyMwpc1()) >= TA2GoAT_NULL) WC1_E[nParticles] = 0.0;
+			else WC1_E[nParticles] = part.GetEnergyMwpc1();
+			
+			if(TMath::Abs(part.GetPsVertex().X()) >= TA2GoAT_NULL) WC_Vertex_X[nParticles] = 0.0;
+			else WC_Vertex_X[nParticles]  = part.GetPsVertex().X();			
+
+			if(TMath::Abs(part.GetPsVertex().Y()) >= TA2GoAT_NULL) WC_Vertex_Y[nParticles] = 0.0;
+			else WC_Vertex_Y[nParticles]  = part.GetPsVertex().Y();	
+			
+			if(TMath::Abs(part.GetPsVertex().Z()) >= TA2GoAT_NULL) WC_Vertex_Z[nParticles] = 0.0;
+			else WC_Vertex_Z[nParticles]  = part.GetPsVertex().Z();				
+			
+			if(part.GetCentralIndex() == ENullHit) centralCrys[nParticles] = -1;
+			else centralCrys[nParticles] = part.GetCentralIndex();
 						
-			if(part.GetVetoIndex() == ENullHit) centralVeto[i] = -1;
-			else centralVeto[i]	= part.GetVetoIndex();		
+			if(part.GetVetoIndex() == ENullHit) centralVeto[nParticles] = -1;
+			else centralVeto[nParticles]	= part.GetVetoIndex();		
 			
 			// Store other values which don't have this "no-value" option
-			Apparatus[i]	= (UChar_t)EAppCB;
-			Theta[i]		= part.GetThetaDg();
-			Phi[i]			= part.GetPhiDg();			
-			clusterSize[i]  = (UChar_t)part.GetClusterSize();
-
+			Apparatus[nParticles]	= (UChar_t)EAppCB;
+			Theta[nParticles]		= part.GetThetaDg();
+			Phi[nParticles]			= part.GetPhiDg();			
+			clusterSize[nParticles]  = (UChar_t)part.GetClusterSize();
+		
+			nParticles++;
 		}
 	}
 
