@@ -23,7 +23,7 @@ Stream-Spec:	File	Mk1	0	32768	32	0	400
 #
 ##############################################################################
 # Specify files
-File-Name:     	Compton_354.dat 0 0
+File-Name:     	Compton_354.dat.xz 0 2000
 #File-Name:     Compton_386.dat 0 0
 #
 ## END

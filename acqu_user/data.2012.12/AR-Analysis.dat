@@ -53,15 +53,15 @@ BitPattern:  AR-Analysis-TriggerPat.dat
 Apparatus:      TAGG            TA2Tagger   		AR-Analysis-Tagger.dat
 Apparatus:      CB              TA2CentralApparatus	AR-Analysis-CentApp.dat
 Apparatus:      TAPS            TA2Taps		  	AR-Analysis-TAPS.dat
-Apparatus:     	LinPol          TA2LinearPolEpics       AR-Analysis-LinPol.dat
+#Apparatus:     	LinPol          TA2LinearPolEpics       AR-Analysis-LinPol.dat
 ##
 ## Turn on apparatus-level reconstruction
 Reconstruct-Analysis:
 ##
 ## Specify physics analysis
 ##			Name	Class		Config File
-Physics-Analysis:	PHYS	TA2GoAT		AR-Analysis-GoAT.dat
-#Physics-Analysis:   MyCaLib     TA2MyCaLib      MyCaLib.dat
+#Physics-Analysis:	PHYS	TA2GoAT		AR-Analysis-GoAT.dat
+Physics-Analysis:   MyCaLib     TA2MyCaLib      MyCaLib.dat
 ##
 ## Do some post initialisation...usually necessary
 Initialise:
@@ -78,11 +78,12 @@ Finish: root/macros/FinishWorker.C	Finish();
 ##
 ## Histogram ALL defined single value ADC's
 #
-Display: ADC 1281
-Display: ADC 20401
+#Display: ADC 1281
+#Display: ADC 20401
 ##
 # we added the following line Baya & Julia
-Display: ADC 20201 20202
+#Display: ADC 20201 20202
+Display: All
 ##
 ## Display blocks of scalers
 Display: Scaler 0 181

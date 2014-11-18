@@ -11,16 +11,17 @@ Reconstruct:
 #
 
 # General:      dbhost       		dbname   dbuser      dbpass        calibration
-Use-CaLib:      a2calib.online.a2.kph   CaLib_2012_12    calib       basel10       2012_12_Compton_Collicott
+#Use-CaLib:      a2calib.online.a2.kph   CaLib_2012_12    calib       basel10       2012_12_Compton_Collicott
 #Use-CaLib:      localhost   2012_12    calib    123456       Compton_2012_12
+Use-CaLib:	blaster	CaLib_2012_12	calib	basel10	2012_12_Compton_Collicott
 #
 #
 # tagger calib:     time    efficiency (0=off/1=on)
 Use-CaLib-TAGG:     1       0
 # CB calib:         energy  time    timewalk    quadr. energy    led  (0=off/1=on)
-Use-CaLib-CB:       1       1       0           0                0 
+Use-CaLib-CB:       1       1       1           1                0 
 # TAPS calib:       energy  time    quadr. energy   LED thr.    CFD thr.  (0=off/1=on)
-Use-CaLib-TAPS:     1       1       0               0           0
+Use-CaLib-TAPS:     1       1       1               0           0
 # PID calib:        phi     energy  time  (0=off/1=on)
 Use-CaLib-PID:      1       0       1
 # Veto calib:       energy  time    LED thr. (0=off/1=on)
