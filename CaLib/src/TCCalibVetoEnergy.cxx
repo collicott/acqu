@@ -1,4 +1,4 @@
-// SVN Info: $Id$
+// SVN Info: $Id: TCCalibVetoEnergy.cxx 912 2011-05-18 22:09:17Z werthm $
 
 /*************************************************************************
  * Author: Dominik Werthmueller
@@ -151,6 +151,8 @@ void TCCalibVetoEnergy::FitSlice(TH2* h, Int_t elem)
     // Fit the energy slice of the dE vs E histogram 'h' of the element 'elem'.
     
     Char_t tmp[256];
+    Char_t tmp2[256];
+    Char_t tmp3[256];
 
     // get configuration
     Double_t lowLimit, highLimit;
@@ -161,7 +163,8 @@ void TCCalibVetoEnergy::FitSlice(TH2* h, Int_t elem)
     Int_t firstBin = h->GetXaxis()->FindBin(lowLimit);
     Int_t lastBin = h->GetXaxis()->FindBin(highLimit);
     if (fFitHisto) delete fFitHisto;
-    fFitHisto = (TH1D*) h->ProjectionY(tmp, firstBin, lastBin, "e");
+    //fFitHisto = (TH1D*) h->ProjectionY(tmp, firstBin, lastBin, "e");
+    fFitHisto = (TH1D*) h->ProjectionY(tmp, firstBin, lastBin, "eo");
     if (h != fMCHisto) TCUtils::FormatHistogram(fFitHisto, "Veto.Energy.Histo.Fit");
         
     // create fitting function
@@ -175,12 +178,20 @@ void TCCalibVetoEnergy::FitSlice(TH2* h, Int_t elem)
     if (h == fMCHisto) s.Search(fFitHisto, 5, "goff nobackground", 0.03);
     else s.Search(fFitHisto, 5, "goff nobackground", 0.05);
     fPeak = TMath::MaxElement(s.GetNPeaks(), s.GetPositionX());
+     
+     
+     
+     //fPeak = 2.5;
+     
         
     // prepare fitting function
     Double_t range = 30./lowLimit+0.3;
     Double_t peak_range = 0.2;
+    //fFitFunc->SetRange(1.5, 4);
+    
     fFitFunc->SetRange(fPeak - range, fPeak + range*2);
     fFitFunc->SetParameter(2, fFitHisto->GetXaxis()->FindBin(fPeak));
+    fFitFunc->SetParLimits(1, -100000, 0);
     fFitFunc->SetParLimits(2, 0, 100000);
     fFitFunc->SetParameter(3, fPeak);
     fFitFunc->SetParLimits(3, fPeak - peak_range, fPeak + peak_range);
@@ -206,13 +217,42 @@ void TCCalibVetoEnergy::FitSlice(TH2* h, Int_t elem)
     fLine->SetX1(fPeak);
     fLine->SetX2(fPeak);
     
+//---------------------------------------------------------------  Maria  ------------------------------------------------------------------------------------------------    
+        Double_t Gamp;
+        Double_t Gmean;
+        Double_t Gsigma;
+        
+        if (fgausFunc) delete fgausFunc;
+        sprintf(tmp2, "Gaus_fEnergy_%i", elem);
+        fgausFunc = new TF1(tmp2, "gaus(0)");
+        //fgausFunc->SetRange(110, 180);
+        fgausFunc->SetRange(fPeak - 3*sigma, fPeak + range+3*sigma);
+        Gamp = fFitFunc->GetParameter(2);
+        Gmean = fFitFunc->GetParameter(3);
+        Gsigma = fFitFunc->GetParameter(4);
+        fgausFunc->SetParameters(Gamp,Gmean,Gsigma);
+		fgausFunc->SetLineColor(12);
+		
+		if (fbackFunc) delete fbackFunc;
+		sprintf(tmp3, "Background_fEnergy_%i", elem);
+
+		fbackFunc = new TF1(tmp3, "expo(0)");
+		//fbackFunc->SetRange(110, 180);
+		fbackFunc->SetRange(fPeak - 3*sigma, fPeak + range+3*sigma);
+		fbackFunc->SetParameters(fFitFunc->GetParameter(0),fFitFunc->GetParameter(1));
+		fbackFunc->SetLineColor(1);
+			    
+//------------------------------------------------------------------------------------------------------------------------------------------------------------------------     
     // save peak position
     if (h == fMCHisto) fPeakMC = fPeak;
 
     fCanvasFit->cd(2);
-    fFitHisto->GetXaxis()->SetRangeUser(fPeak*0.4, fPeak*1.6);
+    //fFitHisto->GetXaxis()->SetRangeUser(fPeak*0.4, fPeak*1.6);
+    fFitHisto->GetXaxis()->SetRangeUser(0, 8);
     fFitHisto->Draw("hist");
     fFitFunc->Draw("same");
+    if (fgausFunc) fgausFunc->Draw("same");
+	if (fbackFunc) fbackFunc->Draw("same"); 
     fLine->Draw();
     fCanvasFit->Update();
 }

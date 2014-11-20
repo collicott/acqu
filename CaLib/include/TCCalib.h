@@ -1,4 +1,4 @@
-// SVN Info: $Id$
+// SVN Info: $Id: TCCalib.h 912 2011-05-18 22:09:17Z werthm $
 
 /*************************************************************************
  * Author: Dominik Werthmueller
@@ -53,6 +53,9 @@ protected:
     TH1* fMainHisto;            // main histogram 
     TH1* fFitHisto;             // fitting histogram
     TF1* fFitFunc;              // fitting function
+    
+    TF1* fgausFunc; 			//Maria
+    TF1* fbackFunc; 			//Maria
 
     TH1* fOverviewHisto;        // overview result histogram
     
@@ -75,7 +78,7 @@ public:
                 fNelem(0), fCurrentElem(0),
                 fOldVal(0), fNewVal(0),
                 fAvr(0), fAvrDiff(0), fNcalc(0),
-                fMainHisto(0), fFitHisto(0), fFitFunc(0),
+                fMainHisto(0), fFitHisto(0), fFitFunc(0), fgausFunc(0), fbackFunc(0),
                 fOverviewHisto(0),
                 fCanvasFit(0), fCanvasResult(0), 
                 fTimer(0), fTimerRunning(kFALSE) { }
@@ -88,7 +91,7 @@ public:
           fNelem(nElem), fCurrentElem(0),
           fOldVal(0), fNewVal(0),
           fAvr(0), fAvrDiff(0), fNcalc(0),
-          fMainHisto(0), fFitHisto(0), fFitFunc(0),
+          fMainHisto(0), fFitHisto(0), fFitFunc(0), fgausFunc(0), fbackFunc(0),
           fOverviewHisto(0),
           fCanvasFit(0), fCanvasResult(0), 
           fTimer(0), fTimerRunning(kFALSE) { }

@@ -33,6 +33,9 @@ TCCalib::~TCCalib()
     //if (fCanvasFit) delete fCanvasFit;            // comment this to prevent crash
     //if (fCanvasResult) delete fCanvasResult;      // comment this to prevent crash
     if (fTimer) delete fTimer;
+
+    if (fgausFunc) delete fgausFunc; //Maria
+    if (fbackFunc) delete fbackFunc; //Maria
 }
 
 //______________________________________________________________________________
@@ -52,6 +55,9 @@ void TCCalib::Start(const Char_t* calibration, Int_t nSet, Int_t* set)
     fMainHisto = 0;
     fFitHisto = 0;
     fFitFunc = 0;
+
+    fgausFunc = 0; //Maria
+    fbackFunc = 0; //Maria
 
     fOverviewHisto = 0;
 
